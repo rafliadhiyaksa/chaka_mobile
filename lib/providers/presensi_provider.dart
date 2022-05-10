@@ -28,11 +28,19 @@ class PresensiProvider extends GetConnect {
         headers: {
           "Authorization":
               "Basic ${base64Encode(utf8.encode('$username:$password'))}",
-          "content-type": "application/json"
+          "Content-Type": "application/json"
         },
       );
+      print(noEmployee);
+      print(now.toString());
+      print(imageBase64);
+      print(latitude);
+      print(longitude);
+      print(image.path.split('/').last);
+      print('status code = ' + response.statusCode.toString());
       return response;
     } catch (e) {
+      print(e);
       rethrow;
     }
   }

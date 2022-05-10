@@ -25,7 +25,7 @@ class NotificationService {
   final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
       FlutterLocalNotificationsPlugin();
 
-  static final AndroidNotificationDetails _androidNotificationDetails =
+  static const AndroidNotificationDetails _androidNotificationDetails =
       AndroidNotificationDetails(
     channelId,
     "chakamobile",
@@ -36,26 +36,26 @@ class NotificationService {
     importance: Importance.high,
   );
 
-  static final IOSNotificationDetails _iosNotificationDetails =
+  static const IOSNotificationDetails _iosNotificationDetails =
       IOSNotificationDetails();
 
-  final NotificationDetails notificationDetails = NotificationDetails(
+  final NotificationDetails notificationDetails = const NotificationDetails(
     android: _androidNotificationDetails,
     iOS: _iosNotificationDetails,
   );
 
   Future<void> init() async {
-    final AndroidInitializationSettings androidInitializationSettings =
+    const AndroidInitializationSettings androidInitializationSettings =
         AndroidInitializationSettings('app_icon');
 
-    final IOSInitializationSettings iosInitializationSettings =
+    const IOSInitializationSettings iosInitializationSettings =
         IOSInitializationSettings(
       defaultPresentAlert: false,
       defaultPresentBadge: false,
       defaultPresentSound: false,
     );
 
-    final InitializationSettings initializationSettings =
+    const InitializationSettings initializationSettings =
         InitializationSettings(
       android: androidInitializationSettings,
       iOS: iosInitializationSettings,
@@ -81,7 +81,7 @@ class NotificationService {
   // }
 
   void showPeriodicNotification() {
-    Timer.periodic(Duration(minutes: 1), (timer) {
+    Timer.periodic(const Duration(minutes: 1), (timer) {
       if (authC.isLogged.value) {
         NotificationProvider().getAllNotifications().then((value) async {
           if (value.status.isOk) {

@@ -13,8 +13,8 @@ class AuthController extends GetxController with CacheManager {
   var loginSuccess = false.obs;
   var isLogged = false.obs;
 
-  var user = User().obs;
-  var tempDataUser = User().obs;
+  var user = const User().obs;
+  var tempDataUser = const User().obs;
 
   final formKey = GlobalKey<FormState>().obs;
 
@@ -110,7 +110,7 @@ class AuthController extends GetxController with CacheManager {
 
   Future<void> logout() async {
     isLogged.value = false;
-    user.value = User();
+    user.value = const User();
     await removeDataLogin();
   }
 }

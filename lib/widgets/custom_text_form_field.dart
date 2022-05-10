@@ -24,26 +24,27 @@ class CustomTextFormField extends StatelessWidget {
       obscureText: obscureText,
       decoration: InputDecoration(
         hintText: hintText,
-        contentPadding: EdgeInsets.all(20),
+        contentPadding: const EdgeInsets.all(20),
         fillColor: Colors.grey.shade300,
         filled: true,
         alignLabelWithHint: true,
-        hintStyle: TextStyle(color: Colors.grey, fontWeight: FontWeight.w500),
+        hintStyle:
+            const TextStyle(color: Colors.grey, fontWeight: FontWeight.w500),
         border: OutlineInputBorder(
           borderSide: BorderSide(color: Colors.grey.shade300),
-          borderRadius: BorderRadius.all(Radius.circular(15)),
+          borderRadius: const BorderRadius.all(Radius.circular(15)),
         ),
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(color: Colors.grey.shade300),
-          borderRadius: BorderRadius.all(Radius.circular(15)),
+          borderRadius: const BorderRadius.all(Radius.circular(15)),
         ),
-        errorBorder: OutlineInputBorder(
+        errorBorder: const OutlineInputBorder(
           borderSide: BorderSide(color: Colors.red, width: 2),
           borderRadius: BorderRadius.all(Radius.circular(15)),
         ),
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(color: Colors.grey.shade300),
-          borderRadius: BorderRadius.all(Radius.circular(15)),
+          borderRadius: const BorderRadius.all(Radius.circular(15)),
         ),
         suffixIcon: suffixIcon,
       ),

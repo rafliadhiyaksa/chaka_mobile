@@ -20,12 +20,12 @@ class LoginPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text(
+                const Text(
                   'CHAKA MOBILE',
                   style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(height: 5),
+                const SizedBox(height: 5),
                 Text(
                   'Use your chaka account bellow and login to your account',
                   style: TextStyle(fontSize: 15, color: Colors.grey.shade600),
@@ -34,7 +34,7 @@ class LoginPage extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 40),
+          const SizedBox(height: 40),
 
           Container(
             padding: EdgeInsets.symmetric(horizontal: Get.width * 0.07),
@@ -53,7 +53,7 @@ class LoginPage extends StatelessWidget {
                         return null;
                       },
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     CustomTextFormField(
                       hintText: 'password',
                       suffixIcon: InkWell(
@@ -75,37 +75,33 @@ class LoginPage extends StatelessWidget {
                         return null;
                       },
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
 
                     // remember me
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Container(
-                          child: Row(
-                            children: [
-                              Checkbox(
-                                splashRadius: 2,
-                                visualDensity: VisualDensity.compact,
-                                value: controller.rememberMe.value,
-                                onChanged: (value) {
-                                  controller.rememberMe.value = value!;
-                                },
-                              ),
-                              Text('Remember me')
-                            ],
-                          ),
+                        Row(
+                          children: [
+                            Checkbox(
+                              splashRadius: 2,
+                              visualDensity: VisualDensity.compact,
+                              value: controller.rememberMe.value,
+                              onChanged: (value) {
+                                controller.rememberMe.value = value!;
+                              },
+                            ),
+                            const Text('Remember me')
+                          ],
                         ),
-                        Container(
-                          child: TextButton(
-                            onPressed: () {},
-                            child: Text('Forgot Password?'),
-                          ),
+                        TextButton(
+                          onPressed: () {},
+                          child: const Text('Forgot Password?'),
                         ),
                       ],
                     ),
 
-                    SizedBox(height: 30),
+                    const SizedBox(height: 30),
 
                     // login button
                     ElevatedButton(
@@ -114,12 +110,12 @@ class LoginPage extends StatelessWidget {
                           controller.login();
                         }
                       },
-                      style: ButtonStyle(),
+                      style: const ButtonStyle(),
                       child: Container(
                         alignment: Alignment.center,
                         width: double.infinity,
                         padding: const EdgeInsets.all(12),
-                        child: Text(
+                        child: const Text(
                           'Login',
                           style: TextStyle(fontSize: 20),
                         ),

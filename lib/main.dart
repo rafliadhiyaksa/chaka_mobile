@@ -1,3 +1,4 @@
+import 'package:chaka_app/services/location_service.dart';
 import 'package:chaka_app/services/notification_service.dart';
 import 'package:chaka_app/views/authentication/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
 
   final authC = Get.find<AuthController>();
   final presensiC = Get.lazyPut(() => PresensiController());
+  final locationC = Get.lazyPut(() => LocationService());
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +35,7 @@ class MyApp extends StatelessWidget {
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ButtonStyle(
             backgroundColor: MaterialStateProperty.all(Colors.blue.shade600),
-            padding: MaterialStateProperty.all(EdgeInsets.all(5)),
+            padding: MaterialStateProperty.all(const EdgeInsets.all(5)),
             shape: MaterialStateProperty.all(
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
             ),
@@ -44,7 +46,7 @@ class MyApp extends StatelessWidget {
         future: authC.initializeSettings(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return SplashScreen();
+            return const SplashScreen();
           } else {
             if (snapshot.hasError) {
               return Center(child: Text('Error: ${snapshot.error}'));

@@ -19,7 +19,7 @@ mixin CacheManager {
       );
     }
 
-    return User();
+    return const User();
   }
 
   Future<void> removeDataLogin() async {
